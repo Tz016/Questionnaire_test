@@ -150,17 +150,21 @@ body {
 
 #page1 {
     background-image: url('pic/scene2_1wpic.png');
+    background-size:cover;
 }
 
 #page2 {
     background-image: url('pic/scene2_2wpic.png');
+    background-size:cover;
 }
 
 #page3 {
     background-image: url('pic/scene2_3wpic.png');
+    background-size:cover;
 }
 #page4 {
     background-image: url('pic/scene2_4wpic.png');
+    background-size:cover;
 }
   /* .book {
     background-color: white;
