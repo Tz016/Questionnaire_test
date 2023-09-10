@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <!-- <script src="data.js"></script> -->
+    <!-- <script src="p5.min.js"></script>
+    <script src="finalPganim.js"></script> -->
+    <title>Questions</title>
+</head>
+
+<body>
+
+    <div class="book" id="page0">
+        <img id="gif" src="pic/p1-4/1-7鸽子无背景.GIF">
+        <img id="image1" src="pic/p1-4/1-1城市背景.png" alt="Image 1">
+        <img id="image2" src="pic/p1-4/1-2城市背景.png" alt="Image 2">
+        <img id="image3" src="pic/p1-4/1-3城市背景.png" alt="Image 3">
+        <img id="image4" src="pic/p1-4/1-4城市背景.png" alt="Image 4">
+        <img id="image5" src="pic/p1-4/1-5城市背景.png" alt="Image 2">
+        <img id="image6" src="pic/p1-4/1-6城市背景.png" alt="Image 3">
+        <img id="image7" src="pic/p1-4/1-7城市背景.png" alt="Image 4">    
+    </div>
+    </div>
+    <div class="book" id="page1" style="display: none;">
+        <!-- 第二页内容 -->
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;池塘边的草中似乎堆着几个画布，它们是艺术品还是弃作？</p>
+        <div class="button-container">
+            <button class='button' id='b1' onclick="showPage('page2')">💰</button>
+            <button class='button' id="b2" onclick="showPage('page2')">🗑️</button>
+        </div>
+        <button id='back' onclick="backPage('page0')">&lt;Back</button>
+        <!-- <div class="container">
+            <div class="shape" id="shape"></div>
+            <div class="tooltip" id="tooltip">
+              This is the tooltip text.
+            </div>
+          </div> -->
+    </div>
+
+    <div class="book" id="page2" style="display: none;">
+        <!-- 第三页内容 -->
+        <p>&nbsp;&nbsp;池塘边的草中似乎堆着几个画布，它们是艺术品还是弃作？</p>
+        <div class="button-container">
+            <button class='button' id='b1' onclick="showPage('page3')">💰</button>
+            <button class='button' id='b2' onclick="showPage('page3')">🗑️</button>
+        </div>
+        <button id='back' onclick="backPage('page2')">&lt;Back</button>
+    </div>
+
+    <div class="book" id="page3" style="display: none;">
+        <!-- 第三页内容 -->
+        <p>&nbsp;&nbsp;池塘边的草中似乎堆着几个画布，它们是艺术品还是弃作？</p>
+        <div class="button-container">
+            <button class='button' id='b1' onclick="showPage('page4')">💰</button>
+            <button class='button' id='b2' onclick="showPage('page4')">🗑️</button>
+        </div>
+        <button id='back' onclick="backPage('page3')">&lt;Back</button>
+    </div>
+    <div class="book" id="page4" style="display: none;">
+        <!-- 第三页内容 -->
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;池塘边的草中似乎堆着几个画布，它们是艺术品还是弃作？</p>
+        <div class="button-container">
+            <button class='button' id="b1" onclick="showPage('page5')">💰</button>
+            <button class='button' id="b2" onclick="showPage('page5')">🗑️</button>
+        </div>
+        <button id='back' onclick="backPage('page4')">&lt;Back</button>
+    </div>
+    <div class="book" id="page5" style="display: none;">
+        <!-- 第四页内容 -->
+
+    <div class="sketchContainer">
+        <img id="bggif" src="pic\mySketch (1).gif">
+    </div>
+    <div class="result">
+        <h1>Based on your choice:</h1>
+        <h1>Based on your choice: </h1>
+        <p id="result"></p>
+        <p id="longestTimeQuestion"></p>
+        <p id="wrongJudgmentQuestions"></p>
+    </div>
+    </div>
+    <!-- <div class="coordinates" id="coordinates">Mouse Coordinates: (0, 0)</div> -->
+</body>
+
+</html>

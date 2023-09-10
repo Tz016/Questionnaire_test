@@ -1,0 +1,412 @@
+@font-face {
+    font-family: 'uploadfont'; /* 自定义字体名称 */
+    src: url('uploadfont.ttf') format('truetype'); /* 字体文件路径和格式 */
+  }
+
+  .imgContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+
+  }
+  #gif{
+    max-width: 100%;
+  height: auto;
+  }
+  #bggif{
+    height: 100vh;
+  }
+  .sketchContainer {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  }
+/* 
+  canvas {
+    display: block;
+  }
+  
+  #myContainer {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  } */
+
+body {
+    /* margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; */
+    background-image: url('pic/background.png');
+    font-family: 'uploadfont', sans-serif; /* 使用自定义字体，如果无法加载则使用默认 sans-serif 字体 */
+  }
+  
+  #image1,#image2,#image3,#image4{
+    top:0px;
+    left:0px;
+    position:fixed; 
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+  }
+  @keyframes floatup {
+    0% {
+      transform: translate(0%,0%) scale(1); /* 初始状态 */
+      opacity: 0;
+    }
+    13%{
+      opacity: 0.9;
+    }
+    25%{
+      transform: translate(0%,10%) scale(1.4); /* 初始状态 */
+      opacity: 1;
+    }
+    50%{
+      transform: translate(0%,20%) scale(1.7); /* 初始状态 */
+      opacity: 0.7;
+    }
+    75%{
+      transform: translate(0%,25%) scale(1.9); /* 初始状态 */
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(0%, 30%) scale(2); /* 终止状态，将元素放大2倍，并向上移动50% */
+      opacity: 0;
+    }
+  }
+  #image1{ 
+    animation: floatup 8s ;
+  }
+
+  #image2{
+  animation: floatup 8s ;
+  animation-delay: 8s;
+}
+
+#image3{
+  animation: floatup 8s ;
+  animation-delay: 16s;
+}
+#image4{
+  animation: floatup 8s ;
+  animation-delay: 24s;
+}
+#image5{
+  animation: floatup 8s ;
+  animation-delay: 32s;
+}
+#image6{
+  animation: floatup 8s ;
+  animation-delay: 40s;
+}
+#image7{
+  animation: floatup 8s ;
+  animation-delay: 48s;
+}
+  .book {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; */
+    overflow: hidden;
+    background-size: contain;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+    transition: transform 3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+
+
+
+		/* 定义size-up动画，使元素从初始状态缩放到35倍大小 */
+		/* @keyframes size-up {
+			from {
+				transform: scale(0.1); 
+			}
+			to {
+				transform: scale(35);
+			}
+		} */
+
+		/* 将size-up动画添加到img元素中，使图片缩放到35倍大小 */
+
+#page1 {
+    background-image: url('pic/scene2_1wpic.png');
+}
+
+#page2 {
+    background-image: url('pic/scene2_2wpic.png');
+}
+
+#page3 {
+    background-image: url('pic/scene2_3wpic.png');
+}
+#page4 {
+    background-image: url('pic/scene2_4wpic.png');
+}
+  /* .book {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  } */
+.start-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+}
+#start{
+    position: absolute;
+    display:flex; 
+    padding:2%;
+    padding-left: 5%;
+    padding-right:5%;
+    top:30%;
+    font-size: large;
+    font-weight: bolder;
+    background-color:rgba(255, 255, 255, 0.4);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+    font-family: 'uploadfont', sans-serif;
+}
+#start:hover{
+    background-color: rgba(73, 168, 196, 0.3);
+}
+  .button-container {
+    position: absolute;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+.result{
+    position: fixed;
+    top:10%;
+    left:10%;
+}
+.button {
+    display:flex;
+    padding:10%;
+    font-size: large;
+    background-color:rgba(255, 255, 255, 0); 
+    color: black;
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
+    font-family: 'uploadfont', sans-serif;
+  }
+
+.button:hover {
+   font-size: larger;
+}
+
+#page1 p {
+    display:inline-block;
+    margin-left:70%;
+    width: 15%;
+    height: 48%;
+    font-size: small;
+    writing-mode: vertical-rl;
+    margin-top: 40px;
+}
+#page1 .button-container {
+    position: absolute;
+    display:flex;
+    justify-self: center;
+    left:20%;
+    right:20%;
+    /* gap:270%;  */
+    bottom: 25%;
+}
+#page1 #b1{
+    margin-right:2%;
+}
+#page1 #b2{
+    margin-left:2%;
+}
+
+
+#page2 p {
+    display:inline-block;
+    margin-left:50%;
+    width: 40%;
+    height: 20%;
+    font-size: small;
+    margin-top: 55px;
+}
+#page2 .button-container {
+    position: absolute;
+    display:flex;
+    justify-self: center;
+    left:20%;
+    right:20%;
+    /* gap:270%;  */
+    bottom: 15%;
+}
+#page2 #b1{
+    margin-right:2%;
+}
+#page2 #b2{
+    margin-left:2%;
+}
+
+
+#page3 p {
+    display:inline-block;
+    margin-left:10%;
+    width: 40%;
+    height: 20%;
+    font-size: small;
+    margin-top: 30px;
+}
+#page3 .button-container {
+    position: absolute;
+    display:flex;
+    justify-self: center;
+    left:55%;
+    right:7%;
+    /* gap:270%;  */
+    top: 15%;
+}
+#page3 #b1{
+    margin-right:2%;
+}
+#page3 #b2{
+    margin-left:2%;
+}
+
+
+#page4 p {
+    display:inline-block;
+    margin-left:15%;
+    width: 30%;
+    height: 30%;
+    font-size: small;
+    margin-top: 33px;
+    writing-mode: vertical-lr;
+}
+#page4 .button-container {
+    position: absolute;
+    display:flex;
+    justify-self: center;
+    left:47%;
+    right:7%;
+    /* gap:270%;  */
+    top: 25%;
+}
+#page4 #b1{
+    margin-right:2%;
+}
+#page4 #b2{
+    margin-left:2%;
+}
+
+#back{
+    background-color: rgba(43, 42, 41, 0.4);
+   border:0px;
+    color:white;
+    left:-1px;
+    padding:1%;
+    padding-left:4%;
+    padding-right:1.5%;
+    position: absolute;
+    top:3%;
+    font-weight:bolder;
+    transition: font-size 0.3s ease;
+}
+#back:hover{
+    background-color: rgba(43, 42, 41, 0.4);
+    font-size:medium;    
+}
+
+
+
+.container {
+    position: relative;
+    width: 200px;
+  height: 200px;
+  overflow: hidden;
+  }
+  
+  .shape {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+  clip-path: polygon(3800/263% 11400/558% , 22600/263% 11500/558%, 100% 100%, 0% 100%);
+  }
+  
+  .tooltip {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .shape:hover + .tooltip {
+    display: block;
+  }
+
+
+
+  .coordinates {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  
+.page-transition-out {
+    animation: pageOutAnimation 1s forwards;
+  }
+  
+  .page-transition-in {
+    animation: pageInAnimation 1s forwards;
+  }
+  
+  @keyframes pageOutAnimation {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-180deg);
+    }
+  }
+  
+  @keyframes pageInAnimation {
+    from {
+      transform: rotateY(180deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }

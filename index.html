@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MainPage</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="firstPganim.js"></script> -->
+</head>
+
+<body>
+    <div class="imgContainer"> 
+        <img id="gif" src="pic/p1-4/1-7鸽子无背景.GIF"">
+    </div>
+    <div class="start-container">
+    <button id="start" onclick="openNewMobilePage()">Start</button>
+    </div>
+    <script>
+        function openNewMobilePage() {
+    if(window.innerHeight<window.innerWidth){
+    const leftPosition = (window.innerWidth - window.innerHeight*9/19.4*3/4) / 2;
+    const topPosition = (window.innerHeight/4) / 2;
+    const newPage = window.open('index.html', '_blank', `width=${window.innerHeight*9/19.4*3/4},height=${window.innerHeight*3/4},left=${leftPosition},top=${topPosition},toolbar=no, initial-scale=1.0, menubar=no, resizeable=no, scrollbars=no`);
+    }else{
+        window.location.href="quizpage.html";
+    }
+   
+}
+    </script>
+</body>
+
+</html>
