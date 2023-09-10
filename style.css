@@ -53,7 +53,7 @@ body {
     font-family: 'uploadfont', sans-serif; /* 使用自定义字体，如果无法加载则使用默认 sans-serif 字体 */
   }
   
-  #image1,#image2,#image3,#image4{
+  #image1,#image2,#image3,#image4,#image5,#image6,#image7{
     top:0px;
     left:0px;
     position:fixed; 
