@@ -164,7 +164,7 @@ function showResult() {
   console.log(longestTime)
   console.log(calculateTime)
   if (longestTime>0.5) {
-    document.getElementById('longestTimeQuestion').textContent = `你在看${longestTimeQuestion} 的时候犹豫了很久${longestTime}秒，是觉得它们都是很完善的作品吗？`;
+    document.getElementById('longestTimeQuestion').textContent = `你在看第${longestTimeQuestion} 道的时候犹豫了很久${longestTime}秒，是觉得它们都是很完善的作品吗？`;
   } else {
     document.getElementById('longestTimeQuestion').textContent = "No questions answered yet.";
   }
