@@ -79,30 +79,34 @@
 
 var anim = document.querySelector("#image7");
 anim.addEventListener("animationend",function(e){
-  showPage('page1');
+  showPage('page1',0);
 },false);
 
 let questionTimes = [];
-const questionNumber=0;
-recordQuestionTime(0);
-
+let calculateTime=[]
 function recordQuestionTime(questionNumber) {
+  // const questionNumber = parseInt(pageId.match(/\d+/)[0]);
   questionTimes[questionNumber] = new Date().getTime();
-  console.log(questionNumber)
+  console.log(questionTimes[questionNumber])
 }
 
 // Function to calculate the time spent on a question (in seconds)
-function calculateTimeSpent(questionNumber) {
-  const currentTime = new Date().getTime();
-  const startTime = questionTimes[questionNumber];
-  const timeSpent = (currentTime - startTime) / 1000;
-  console.log(timeSpent)
-  console.log()
-  return timeSpent;
-}
-
-function showPage(pageId, questionNumber) {
+// function calculateTimeSpent(questionNumber) {
+//   const currentTime = new Date().getTime();
+//   const startTime = questionTimes[questionNumber];
+//   const timeSpent = (currentTime - startTime) / 1000;
+//   console.log(timeSpent)
+//   console.log()
+//   return timeSpent;
+// }
+let TFQuestion=[]
+function showPage(pageId,TF) {
+  const questionNumber = parseInt(pageId.match(/\d+/)[0])-1;
   recordQuestionTime(questionNumber);
+  if(questionNumber!=0){
+    TFQuestion[questionNumber-1]=TF
+    console.log(TF)
+  }
 
   const pages = document.querySelectorAll('.book');
 
@@ -117,8 +121,6 @@ function showPage(pageId, questionNumber) {
   if (pageId === 'page0') {
     displayAndAnimateImages();
     
-  }else{
-    questionNumber+=1;
   }
   if (pageId === 'page5') {
     showResult();
@@ -150,25 +152,28 @@ function showPage(pageId, questionNumber) {
 function showResult() {
   // 在此添加根据问题显示分析结果的逻辑
   // 将结果显示在页面上，例如：
-  document.getElementById('result').textContent = '这是根据您的选择生成的结果。';
+  document.getElementById('result').textContent = '在这次测试中，你观赏了50%的弃作，xx%的AI作品，xx%的established artist的作品。 ';
+  // var longestTime=0;
+  for(let i=0;i<questionTimes.length-1;i++){
+    calculateTime[i]=(questionTimes[i+1]-questionTimes[i])/1000
 
-  let longestTimeQuestion = -1;
-  let longestTimeSpent = 0;
-  for (let i = 1; i < questionTimes.length; i++) {
-    if (questionTimes[i]) {
-      const timeSpent = calculateTimeSpent(i);
-      if (timeSpent > longestTimeSpent) {
-        longestTimeQuestion = i + 1;
-        longestTimeSpent = timeSpent;
-      }
-    }
   }
-
-  if (longestTimeQuestion !== -1) {
-    document.getElementById('longestTimeQuestion').textContent = `Question ${longestTimeQuestion} had the longest time spent: ${longestTimeSpent} seconds`;
+  const longestTime=Math.max.apply(null, calculateTime);
+  const longestTimeQuestion=calculateTime.indexOf(longestTime)+1
+  console.log(longestTimeQuestion)
+  console.log(longestTime)
+  console.log(calculateTime)
+  if (longestTime>0.5) {
+    document.getElementById('longestTimeQuestion').textContent = `你在看${longestTimeQuestion} 的时候犹豫了很久${longestTime}秒，是觉得它们都是很完善的作品吗？`;
   } else {
     document.getElementById('longestTimeQuestion').textContent = "No questions answered yet.";
   }
+  let countTF={1:0,0:0}
+  for (let i=0;i<TFQuestion.length;i++){
+    countTF[TFQuestion[i]]++
+  }
+
+  document.getElementById('TFQuestions').textContent = `你识别出了${countTF[1]}个正确的弃作，正确率${countTF[1]/(countTF[1]+countTF[0])*100}%`
 }
 
 function backPage(pageId) {

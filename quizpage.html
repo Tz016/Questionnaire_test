@@ -29,8 +29,8 @@
         <!-- 第二页内容 -->
         <p>&nbsp;&nbsp;&nbsp;&nbsp;池塘边的草中似乎堆着几个画布，它们是艺术品还是弃作？</p>
         <div class="button-container">
-            <button class='button' id='b1' onclick="showPage('page2')">💰</button>
-            <button class='button' id="b2" onclick="showPage('page2')">🗑️</button>
+            <button class='button' id='b1' onclick="showPage('page2',1)">💰</button>
+            <button class='button' id="b2" onclick="showPage('page2',0)">🗑️</button>
         </div>
         <button id='back' onclick="backPage('page0')">&lt;Back</button>
         <!-- <div class="container">
@@ -45,8 +45,8 @@
         <!-- 第三页内容 -->
         <p>&nbsp;&nbsp;池塘边的草中似乎堆着几个画布，它们是艺术品还是弃作？</p>
         <div class="button-container">
-            <button class='button' id='b1' onclick="showPage('page3')">💰</button>
-            <button class='button' id='b2' onclick="showPage('page3')">🗑️</button>
+            <button class='button' id='b1' onclick="showPage('page3',1)">💰</button>
+            <button class='button' id='b2' onclick="showPage('page3',0)">🗑️</button>
         </div>
         <button id='back' onclick="backPage('page2')">&lt;Back</button>
     </div>
@@ -55,8 +55,8 @@
         <!-- 第三页内容 -->
         <p>&nbsp;&nbsp;池塘边的草中似乎堆着几个画布，它们是艺术品还是弃作？</p>
         <div class="button-container">
-            <button class='button' id='b1' onclick="showPage('page4')">💰</button>
-            <button class='button' id='b2' onclick="showPage('page4')">🗑️</button>
+            <button class='button' id='b1' onclick="showPage('page4',1)">💰</button>
+            <button class='button' id='b2' onclick="showPage('page4',0)">🗑️</button>
         </div>
         <button id='back' onclick="backPage('page3')">&lt;Back</button>
     </div>
@@ -64,8 +64,8 @@
         <!-- 第三页内容 -->
         <p>&nbsp;&nbsp;&nbsp;&nbsp;池塘边的草中似乎堆着几个画布，它们是艺术品还是弃作？</p>
         <div class="button-container">
-            <button class='button' id="b1" onclick="showPage('page5')">💰</button>
-            <button class='button' id="b2" onclick="showPage('page5')">🗑️</button>
+            <button class='button' id="b1" onclick="showPage('page5',1)">💰</button>
+            <button class='button' id="b2" onclick="showPage('page5',0)">🗑️</button>
         </div>
         <button id='back' onclick="backPage('page4')">&lt;Back</button>
     </div>
@@ -76,11 +76,10 @@
         <img id="bggif" src="pic\mySketch (1).gif">
     </div>
     <div class="result">
-        <h1>Based on your choice:</h1>
-        <h1>Based on your choice: </h1>
+        <h1>这是根据您的选择生成的结果：</h1>
         <p id="result"></p>
         <p id="longestTimeQuestion"></p>
-        <p id="wrongJudgmentQuestions"></p>
+        <p id="TFQuestions"></p>
     </div>
     </div>
     <!-- <div class="coordinates" id="coordinates">Mouse Coordinates: (0, 0)</div> -->
